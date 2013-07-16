@@ -35,6 +35,15 @@
 	CGContextDrawImage(context, imageRect, self.image);
 }
 
+-(void)drawBlipAtLocation:(CGPoint)point
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    if (context){
+        CGContextSetRGBFillColor(context, 1, 0, 0, 1);
+        CGContextFillRect(context, CGRectMake(point.x, point.y, 3, 3));
+    }
+}
+
 - (CGImageRef)image
 {
 	if (_image == NULL)

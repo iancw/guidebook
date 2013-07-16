@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SenecaDetailViewController : UIViewController
+@interface SenecaDetailViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 

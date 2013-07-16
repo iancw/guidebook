@@ -10,4 +10,6 @@
 
 @interface SenecaQuartzView : UIView
 
+-(void)drawBlipAtLocation:(CGPoint)point;
+
 @end
