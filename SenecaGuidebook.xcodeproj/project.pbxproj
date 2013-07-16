@@ -27,6 +27,8 @@
 		3C4105B1179391A200996A48 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C410587179391A200996A48 /* CoreData.framework */; };
 		3C4105B9179391A200996A48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C4105B7179391A200996A48 /* InfoPlist.strings */; };
 		3C4105BC179391A200996A48 /* SenecaGuidebookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4105BB179391A200996A48 /* SenecaGuidebookTests.m */; };
+		3C4105C7179391FB00996A48 /* SenecaQuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4105C6179391FB00996A48 /* SenecaQuartzView.m */; };
+		3C4105C91793946E00996A48 /* seneca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C4105C81793946E00996A48 /* seneca.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		3C4105B8179391A200996A48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C4105BA179391A200996A48 /* SenecaGuidebookTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenecaGuidebookTests.h; sourceTree = "<group>"; };
 		3C4105BB179391A200996A48 /* SenecaGuidebookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenecaGuidebookTests.m; sourceTree = "<group>"; };
+		3C4105C5179391FB00996A48 /* SenecaQuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenecaQuartzView.h; sourceTree = "<group>"; };
+		3C4105C6179391FB00996A48 /* SenecaQuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaQuartzView.m; sourceTree = "<group>"; };
+		3C4105C81793946E00996A48 /* seneca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seneca.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,8 @@
 				3C410592179391A200996A48 /* SenecaAppDelegate.h */,
 				3C410593179391A200996A48 /* SenecaAppDelegate.m */,
 				3C41059B179391A200996A48 /* MainStoryboard.storyboard */,
+				3C4105C5179391FB00996A48 /* SenecaQuartzView.h */,
+				3C4105C6179391FB00996A48 /* SenecaQuartzView.m */,
 				3C4105A1179391A200996A48 /* SenecaMasterViewController.h */,
 				3C4105A2179391A200996A48 /* SenecaMasterViewController.m */,
 				3C4105A4179391A200996A48 /* SenecaDetailViewController.h */,
@@ -144,6 +151,7 @@
 		3C41058A179391A200996A48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C4105C81793946E00996A48 /* seneca.jpg */,
 				3C41058B179391A200996A48 /* SenecaGuidebook-Info.plist */,
 				3C41058C179391A200996A48 /* InfoPlist.strings */,
 				3C41058F179391A200996A48 /* main.m */,
@@ -251,6 +259,7 @@
 				3C410598179391A200996A48 /* Default@2x.png in Resources */,
 				3C41059A179391A200996A48 /* Default-568h@2x.png in Resources */,
 				3C41059D179391A200996A48 /* MainStoryboard.storyboard in Resources */,
+				3C4105C91793946E00996A48 /* seneca.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +299,7 @@
 				3C4105A0179391A200996A48 /* SenecaGuidebook.xcdatamodeld in Sources */,
 				3C4105A3179391A200996A48 /* SenecaMasterViewController.m in Sources */,
 				3C4105A6179391A200996A48 /* SenecaDetailViewController.m in Sources */,
+				3C4105C7179391FB00996A48 /* SenecaQuartzView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

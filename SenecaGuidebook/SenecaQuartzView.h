@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SenecaQuartzView : QuartzView
+@interface SenecaQuartzView : UIView
 
 @end
