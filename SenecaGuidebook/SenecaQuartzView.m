@@ -21,8 +21,8 @@
     CGContextScaleCTM(context, 1.0, -1.0);
 
     CGRect imageRect;
-	imageRect.origin = CGPointMake(8.0, 8.0);
-	imageRect.size = CGSizeMake(256.0, 256.0);
+	imageRect.origin = CGPointMake(0.0, 0.0);
+	imageRect.size = CGSizeMake(480.0, 640.0);
 	
 	// Note: The images are actually drawn upside down because Quartz image drawing expects
 	// the coordinate system to have the origin in the lower-left corner, but a UIView
@@ -48,7 +48,7 @@
 {
 	if (_image == NULL)
 	{
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"seneca" ofType:@"jpg"];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"gunsight-topo" ofType:@"png"];
 		UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
 		_image = CGImageRetain(img.CGImage);
 	}

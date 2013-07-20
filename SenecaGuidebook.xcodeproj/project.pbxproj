@@ -29,6 +29,7 @@
 		3C4105BC179391A200996A48 /* SenecaGuidebookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4105BB179391A200996A48 /* SenecaGuidebookTests.m */; };
 		3C4105C7179391FB00996A48 /* SenecaQuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4105C6179391FB00996A48 /* SenecaQuartzView.m */; };
 		3C4105C91793946E00996A48 /* seneca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C4105C81793946E00996A48 /* seneca.jpg */; };
+		BE9E33A017977AFC00B4916F /* gunsight-topo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9E339F17977AFC00B4916F /* gunsight-topo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3C4105C5179391FB00996A48 /* SenecaQuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenecaQuartzView.h; sourceTree = "<group>"; };
 		3C4105C6179391FB00996A48 /* SenecaQuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaQuartzView.m; sourceTree = "<group>"; };
 		3C4105C81793946E00996A48 /* seneca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seneca.jpg; sourceTree = "<group>"; };
+		BE9E339F17977AFC00B4916F /* gunsight-topo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gunsight-topo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		3C41058A179391A200996A48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE9E339F17977AFC00B4916F /* gunsight-topo.png */,
 				3C4105C81793946E00996A48 /* seneca.jpg */,
 				3C41058B179391A200996A48 /* SenecaGuidebook-Info.plist */,
 				3C41058C179391A200996A48 /* InfoPlist.strings */,
@@ -260,6 +263,7 @@
 				3C41059A179391A200996A48 /* Default-568h@2x.png in Resources */,
 				3C41059D179391A200996A48 /* MainStoryboard.storyboard in Resources */,
 				3C4105C91793946E00996A48 /* seneca.jpg in Resources */,
+				BE9E33A017977AFC00B4916F /* gunsight-topo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +484,7 @@
 				3C4105C1179391A200996A48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C4105C2179391A200996A48 /* Build configuration list for PBXNativeTarget "SenecaGuidebookTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +493,7 @@
 				3C4105C4179391A200996A48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
