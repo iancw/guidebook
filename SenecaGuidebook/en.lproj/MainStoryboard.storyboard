@@ -71,17 +71,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRQ-4l-2Es" customClass="SenecaQuartzView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="gunsight-topo.png" translatesAutoresizingMaskIntoConstraints="NO" id="sZY-lV-fLU" customClass="SenecaQuartzView"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="TRQ-4l-2Es" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="7jY-Kx-bn9"/>
-                            <constraint firstItem="TRQ-4l-2Es" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="9GB-eM-Zw5"/>
-                            <constraint firstItem="TRQ-4l-2Es" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="BRg-n7-Rmb"/>
-                            <constraint firstItem="TRQ-4l-2Es" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="jN2-gR-gzy"/>
+                            <constraint firstItem="sZY-lV-fLU" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="OeC-Wc-t7j"/>
+                            <constraint firstItem="sZY-lV-fLU" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="ZvH-Za-oFi"/>
+                            <constraint firstItem="sZY-lV-fLU" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="iiv-2b-lnL"/>
+                            <constraint firstItem="sZY-lV-fLU" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="su4-1h-iN4"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ebn-Y4-PpS" appends="YES" id="rFp-yg-6KH"/>
@@ -89,7 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
                     <connections>
-                        <outlet property="senecaQuartzView" destination="TRQ-4l-2Es" id="xB2-dh-ShH"/>
+                        <outlet property="senecaQuartzView" destination="sZY-lV-fLU" id="UTP-tZ-LcU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -102,6 +100,28 @@
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gunsight-topo.png" width="2448" height="3264"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SenecaDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SenecaDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="senecaQuartzView" candidateClass="SenecaQuartzView"/>
+            </relationships>
+        </class>
+        <class className="SenecaMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SenecaMasterViewController.h"/>
+        </class>
+        <class className="SenecaQuartzView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SenecaQuartzView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

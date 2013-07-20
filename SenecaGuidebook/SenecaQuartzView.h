@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SenecaQuartzView : UIView
+@interface SenecaQuartzView : UIImageView
 
 -(void)drawBlipAtLocation:(CGPoint)point;
 
