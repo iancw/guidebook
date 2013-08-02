@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3F4D9917AC103600BC6371 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3F4D9817AC103600BC6371 /* QuartzCore.framework */; };
 		BEC8228817A2BBC20027D29E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228717A2BBC20027D29E /* UIKit.framework */; };
 		BEC8228A17A2BBC20027D29E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228917A2BBC20027D29E /* Foundation.framework */; };
 		BEC8228C17A2BBC20027D29E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228B17A2BBC20027D29E /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3F4D9817AC103600BC6371 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEC8228417A2BBC20027D29E /* Seneca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seneca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8228717A2BBC20027D29E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEC8228917A2BBC20027D29E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3F4D9917AC103600BC6371 /* QuartzCore.framework in Frameworks */,
 				BEC8228817A2BBC20027D29E /* UIKit.framework in Frameworks */,
 				BEC8228A17A2BBC20027D29E /* Foundation.framework in Frameworks */,
 				BEC8228C17A2BBC20027D29E /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +78,7 @@
 		BEC8228617A2BBC20027D29E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3F4D9817AC103600BC6371 /* QuartzCore.framework */,
 				BEC8228717A2BBC20027D29E /* UIKit.framework */,
 				BEC8228917A2BBC20027D29E /* Foundation.framework */,
 				BEC8228B17A2BBC20027D29E /* CoreGraphics.framework */,
@@ -265,6 +269,10 @@
 		BEC822A817A2BBC20027D29E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Seneca/Seneca-Prefix.pch";
 				INFOPLIST_FILE = "Seneca/Seneca-Info.plist";
@@ -276,6 +284,10 @@
 		BEC822A917A2BBC20027D29E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Seneca/Seneca-Prefix.pch";
 				INFOPLIST_FILE = "Seneca/Seneca-Info.plist";
@@ -303,6 +315,7 @@
 				BEC822A917A2BBC20027D29E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
