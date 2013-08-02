@@ -34,6 +34,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="tqW-24-5no" id="cqz-XB-0Bc"/>
+                        <outlet property="parentView" destination="YGf-nK-oM9" id="Iiq-p6-Oy2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
