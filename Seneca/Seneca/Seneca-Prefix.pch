@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'SenecaGuidebook' target in the 'SenecaGuidebook' project
+// Prefix header for all source files of the 'Seneca' target in the 'Seneca' project
 //
 
 #import <Availability.h>
@@ -11,5 +11,4 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
 #endif

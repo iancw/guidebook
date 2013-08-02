@@ -1,28 +1,53 @@
 //
-//  SenecaQuartzView.m
-//  SenecaGuidebook
+//  SenecaTopoView.m
+//  Seneca
 //
-//  Created by Ian Will on 7/14/13.
-//  Copyright (c) 2013 Ian Will Software. All rights reserved.
+//  Created by Ian Will on 7/26/13.
+//  Copyright (c) 2013 Ian Will. All rights reserved.
 //
 
-#import "SenecaQuartzView.h"
+#import "SenecaTopoView.h"
+#import <QuartzCore/QuartzCore.h>
 
-@implementation SenecaQuartzView
+@implementation SenecaTopoView
 {
     CGImageRef _image;
 }
 
-
--(void)drawRect:(CGRect)rect
+- (id)initWithFrame:(CGRect)frame
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        self.layer.delegate = self;
+    }
+    return self;
+}
+
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)context
+{
+/*
+    CGMutablePathRef thePath = CGPathCreateMutable();
+    CGPathMoveToPoint(thePath,NULL,15.0f,15.f);
+    CGPathAddCurveToPoint(thePath,
+                          NULL,
+                          15.f,250.0f,
+                          295.0f,250.0f,
+                          295.0f,15.0f);
+    CGContextBeginPath(context);
+    CGContextAddPath(context, thePath);
+    CGContextSetLineWidth(context, 5);
+    CGContextStrokePath(context);
+    // Release the path
+    CFRelease(thePath);
+ */
     CGContextTranslateCTM(context, 0.0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
-
+    
     CGRect imageRect;
 	imageRect.origin = CGPointMake(0.0, 0.0);
-	imageRect.size = CGSizeMake(480.0, 640.0);
+	imageRect.size = CGSizeMake(480, 640);
 	
 	// Note: The images are actually drawn upside down because Quartz image drawing expects
 	// the coordinate system to have the origin in the lower-left corner, but a UIView
@@ -33,15 +58,6 @@
     
 	// Draw the image in the upper left corner (0,0) with size 64x64
 	CGContextDrawImage(context, imageRect, self.image);
-}
-
--(void)drawBlipAtLocation:(CGPoint)point
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    if (context){
-        CGContextSetRGBFillColor(context, 1, 0, 0, 1);
-        CGContextFillRect(context, CGRectMake(point.x, point.y, 3, 3));
-    }
 }
 
 - (CGImageRef)image

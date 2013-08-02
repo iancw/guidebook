@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Seneca View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="SenecaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YGf-nK-oM9">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gunsight-topo.png" translatesAutoresizingMaskIntoConstraints="NO" id="tqW-24-5no">
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Xt4-XL-JM7" appends="YES" id="3Dx-Qn-80A"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tqW-24-5no" firstAttribute="bottom" secondItem="YGf-nK-oM9" secondAttribute="bottom" type="default" id="DDr-8E-GXJ"/>
+                            <constraint firstItem="tqW-24-5no" firstAttribute="trailing" secondItem="YGf-nK-oM9" secondAttribute="trailing" type="default" id="RXt-Il-wK6"/>
+                            <constraint firstItem="tqW-24-5no" firstAttribute="top" secondItem="YGf-nK-oM9" secondAttribute="top" type="default" id="c7w-gN-lpu"/>
+                            <constraint firstItem="tqW-24-5no" firstAttribute="leading" secondItem="YGf-nK-oM9" secondAttribute="leading" type="default" id="fmt-wk-LzA"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jFO-an-Ge8" appends="YES" id="QOf-bW-QSC"/>
+                            <outletCollection property="gestureRecognizers" destination="PpY-le-1vL" appends="YES" id="etL-jK-uP7"/>
+                            <outletCollection property="gestureRecognizers" destination="Xt4-XL-JM7" appends="YES" id="Bel-5W-Bnd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="tqW-24-5no" id="cqz-XB-0Bc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="jFO-an-Ge8">
+                    <connections>
+                        <action selector="processTap:" destination="2" id="lYS-33-xo2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer cancelsTouchesInView="NO" id="PpY-le-1vL">
+                    <connections>
+                        <action selector="processPinch:" destination="2" id="YHp-dj-wS0"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Xt4-XL-JM7">
+                    <connections>
+                        <action selector="processPan:" destination="2" id="UsK-O8-IXH"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gunsight-topo.png" width="2448" height="3264"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

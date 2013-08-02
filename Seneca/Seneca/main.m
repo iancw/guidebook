@@ -1,9 +1,9 @@
 //
 //  main.m
-//  SenecaGuidebook
+//  Seneca
 //
-//  Created by Ian Will on 7/14/13.
-//  Copyright (c) 2013 Ian Will Software. All rights reserved.
+//  Created by Ian Will on 7/26/13.
+//  Copyright (c) 2013 Ian Will. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
