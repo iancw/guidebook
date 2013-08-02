@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SenecaViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface SenecaViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @end

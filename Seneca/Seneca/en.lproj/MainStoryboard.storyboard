@@ -8,57 +8,55 @@
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SenecaViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YGf-nK-oM9">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="YGf-nK-oM9">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gunsight-topo.png" translatesAutoresizingMaskIntoConstraints="NO" id="tqW-24-5no">
-                                <gestureRecognizers/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="j3P-aP-fL2">
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Xt4-XL-JM7" appends="YES" id="3Dx-Qn-80A"/>
+                                    <outlet property="delegate" destination="2" id="ulT-Za-QrN"/>
                                 </connections>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tqW-24-5no" firstAttribute="bottom" secondItem="YGf-nK-oM9" secondAttribute="bottom" type="default" id="DDr-8E-GXJ"/>
-                            <constraint firstItem="tqW-24-5no" firstAttribute="trailing" secondItem="YGf-nK-oM9" secondAttribute="trailing" type="default" id="RXt-Il-wK6"/>
-                            <constraint firstItem="tqW-24-5no" firstAttribute="top" secondItem="YGf-nK-oM9" secondAttribute="top" type="default" id="c7w-gN-lpu"/>
-                            <constraint firstItem="tqW-24-5no" firstAttribute="leading" secondItem="YGf-nK-oM9" secondAttribute="leading" type="default" id="fmt-wk-LzA"/>
+                            <constraint firstItem="j3P-aP-fL2" firstAttribute="bottom" secondItem="YGf-nK-oM9" secondAttribute="bottom" type="default" id="5DL-c0-R66"/>
+                            <constraint firstItem="j3P-aP-fL2" firstAttribute="trailing" secondItem="YGf-nK-oM9" secondAttribute="trailing" type="default" id="Ray-SX-FPb"/>
+                            <constraint firstItem="j3P-aP-fL2" firstAttribute="leading" secondItem="YGf-nK-oM9" secondAttribute="leading" type="default" id="XHH-zU-kle"/>
+                            <constraint firstItem="j3P-aP-fL2" firstAttribute="top" secondItem="YGf-nK-oM9" secondAttribute="top" type="default" id="juy-2e-JPv"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="jFO-an-Ge8" appends="YES" id="QOf-bW-QSC"/>
-                            <outletCollection property="gestureRecognizers" destination="PpY-le-1vL" appends="YES" id="etL-jK-uP7"/>
-                            <outletCollection property="gestureRecognizers" destination="Xt4-XL-JM7" appends="YES" id="Bel-5W-Bnd"/>
+                            <outletCollection property="gestureRecognizers" destination="jFO-an-Ge8" appends="YES" id="MyL-NN-Qwh"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="tqW-24-5no" id="cqz-XB-0Bc"/>
                         <outlet property="parentView" destination="YGf-nK-oM9" id="Iiq-p6-Oy2"/>
+                        <outlet property="scrollView" destination="j3P-aP-fL2" id="4eY-Zd-2H1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer cancelsTouchesInView="NO" id="jFO-an-Ge8">
                     <connections>
                         <action selector="processTap:" destination="2" id="lYS-33-xo2"/>
+                        <outlet property="delegate" destination="2" id="xM9-Tp-lpF"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pinchGestureRecognizer cancelsTouchesInView="NO" id="PpY-le-1vL">
-                    <connections>
-                        <action selector="processPinch:" destination="2" id="YHp-dj-wS0"/>
-                    </connections>
-                </pinchGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Xt4-XL-JM7">
-                    <connections>
-                        <action selector="processPan:" destination="2" id="UsK-O8-IXH"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="gunsight-topo.png" width="2448" height="3264"/>
-    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SenecaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SenecaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="processTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="parentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
