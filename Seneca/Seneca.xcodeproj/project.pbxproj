@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE3F4D9917AC103600BC6371 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3F4D9817AC103600BC6371 /* QuartzCore.framework */; };
+		BE3F4E0517AD7B5800BC6371 /* SenecaExploreTapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */; };
+		BE3F4E0817AD7B9000BC6371 /* SenecaCreateTapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */; };
 		BEC8228817A2BBC20027D29E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228717A2BBC20027D29E /* UIKit.framework */; };
 		BEC8228A17A2BBC20027D29E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228917A2BBC20027D29E /* Foundation.framework */; };
 		BEC8228C17A2BBC20027D29E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228B17A2BBC20027D29E /* CoreGraphics.framework */; };
@@ -24,6 +26,11 @@
 
 /* Begin PBXFileReference section */
 		BE3F4D9817AC103600BC6371 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BE3F4E0217AD7AE400BC6371 /* SenecaTapHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenecaTapHandler.h; sourceTree = "<group>"; };
+		BE3F4E0317AD7B5800BC6371 /* SenecaExploreTapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenecaExploreTapHandler.h; sourceTree = "<group>"; };
+		BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaExploreTapHandler.m; sourceTree = "<group>"; };
+		BE3F4E0617AD7B9000BC6371 /* SenecaCreateTapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenecaCreateTapHandler.h; sourceTree = "<group>"; };
+		BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaCreateTapHandler.m; sourceTree = "<group>"; };
 		BEC8228417A2BBC20027D29E /* Seneca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seneca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8228717A2BBC20027D29E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEC8228917A2BBC20027D29E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +101,11 @@
 				BEC8229F17A2BBC20027D29E /* MainStoryboard.storyboard */,
 				BEC822A217A2BBC20027D29E /* SenecaViewController.h */,
 				BEC822A317A2BBC20027D29E /* SenecaViewController.m */,
+				BE3F4E0217AD7AE400BC6371 /* SenecaTapHandler.h */,
+				BE3F4E0317AD7B5800BC6371 /* SenecaExploreTapHandler.h */,
+				BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */,
+				BE3F4E0617AD7B9000BC6371 /* SenecaCreateTapHandler.h */,
+				BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */,
 				BEC8228E17A2BBC20027D29E /* Supporting Files */,
 			);
 			path = Seneca;
@@ -185,6 +197,8 @@
 				BEC8229417A2BBC20027D29E /* main.m in Sources */,
 				BEC8229817A2BBC20027D29E /* SenecaAppDelegate.m in Sources */,
 				BEC822A417A2BBC20027D29E /* SenecaViewController.m in Sources */,
+				BE3F4E0517AD7B5800BC6371 /* SenecaExploreTapHandler.m in Sources */,
+				BE3F4E0817AD7B9000BC6371 /* SenecaCreateTapHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

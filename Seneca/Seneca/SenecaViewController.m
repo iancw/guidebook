@@ -7,6 +7,9 @@
 //
 
 #import "SenecaViewController.h"
+#import "SenecaTapHandler.h"
+#import "SenecaExploreTapHandler.h"
+#import "SenecaCreateTapHandler.h"
 #import <QuartzCore/CALayer.h>
 #import <QuartzCore/CAShapeLayer.h>
 
@@ -25,7 +28,30 @@
 
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
-@synthesize points = _points;
+
+id<SenecaTapHandler> tapHandler;
+SenecaExploreTapHandler *exploreTapHandler;
+SenecaCreateTapHandler *createTapHandler;
+
+
+- (void)toggleMode:(id)sender
+{
+    NSLog(@"segmentAction: selected segment = %d", [sender selectedSegmentIndex]);
+    if ( [sender selectedSegmentIndex] )  // If it's 1...Explore was selected
+    {
+        if (! exploreTapHandler)
+        {
+            exploreTapHandler = [[SenecaExploreTapHandler alloc] init];
+        }
+        tapHandler = exploreTapHandler;
+    }else{
+        if (! createTapHandler)
+        {
+            createTapHandler = [[SenecaCreateTapHandler alloc] initWithLayer: self.routesLayer];
+        }
+        tapHandler = createTapHandler;
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -47,6 +73,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.routesLayer = [CAShapeLayer layer];
     [self.imageView.layer addSublayer: self.routesLayer];
+    
+    [self.segmentedControl addTarget:self
+                         action:@selector(toggleMode:)
+               forControlEvents:UIControlEventValueChanged];
+    tapHandler = [[SenecaCreateTapHandler alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,38 +122,22 @@
 
 - (IBAction)processLongPress:(UILongPressGestureRecognizer *)recognizer
 {
-    _points = [[NSMutableArray alloc] init];
+    CGPoint scrollPoint = [recognizer locationInView:self.scrollView];
+    if ( CGRectContainsPoint(self.scrollView.frame, scrollPoint) )
+    {
+        CGPoint point = [recognizer locationInView:self.imageView];
+        [tapHandler handleLongPress:point];
+    }
 }
 
 - (IBAction)processTap:(UITapGestureRecognizer *)gestureRecognizer
 {
-    CGPoint point = [gestureRecognizer locationInView:self.imageView];
-    
-    [self.points addObject:[NSValue valueWithCGPoint:point]];
-    NSLog(@"%f, %f", point.x, point.y);
-
-    CAShapeLayer *layer = self.routesLayer;
-    [layer setFillColor:[[UIColor clearColor] CGColor]];
-    [layer setStrokeColor:[[UIColor blueColor] CGColor]];
-    [layer setLineWidth: 6.0f];
-    [layer setLineJoin:kCALineJoinRound];
-    [layer setLineDashPattern:
-     [NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:5],nil]];
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    CGPoint curPoint = [[self.points objectAtIndex:0] CGPointValue];
-    CGPathMoveToPoint(path, NULL, curPoint.x, curPoint.y);
-    for (int i=1; i<[self.points count]; i++)
+    CGPoint scrollPoint = [gestureRecognizer locationInView:self.scrollView];
+    if ( CGRectContainsPoint(self.scrollView.frame, scrollPoint) )
     {
-        curPoint = [[self.points objectAtIndex:i] CGPointValue];
-        CGPathAddLineToPoint(path, NULL, curPoint.x, curPoint.y);
+        CGPoint point = [gestureRecognizer locationInView:self.imageView];
+        [tapHandler handleTap:point];
     }
-
-    [layer setPath:path];
-    CGPathRelease(path);
-    
-    [_points writeToFile:@"saved-points.txt" atomically:YES];
 }
 
 - (void)centerScrollViewContents {

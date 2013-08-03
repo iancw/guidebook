@@ -11,5 +11,6 @@
 @interface SenecaViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
 
 @end

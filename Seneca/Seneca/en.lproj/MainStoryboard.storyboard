@@ -17,13 +17,22 @@
                                     <outlet property="delegate" destination="2" id="ulT-Za-QrN"/>
                                 </connections>
                             </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P0F-Lb-oSE">
+                                <segments>
+                                    <segment title="Edit"/>
+                                    <segment title="Explore"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j3P-aP-fL2" firstAttribute="bottom" secondItem="YGf-nK-oM9" secondAttribute="bottom" type="default" id="5DL-c0-R66"/>
+                            <constraint firstItem="P0F-Lb-oSE" firstAttribute="leading" secondItem="YGf-nK-oM9" secondAttribute="leading" type="default" id="CyK-8L-OX8"/>
+                            <constraint firstItem="P0F-Lb-oSE" firstAttribute="trailing" secondItem="YGf-nK-oM9" secondAttribute="trailing" type="default" id="Ehq-k8-akY"/>
+                            <constraint firstItem="P0F-Lb-oSE" firstAttribute="bottom" secondItem="YGf-nK-oM9" secondAttribute="bottom" type="default" id="EsE-WP-UcJ"/>
+                            <constraint firstItem="j3P-aP-fL2" firstAttribute="top" secondItem="YGf-nK-oM9" secondAttribute="top" type="default" id="NUY-Fc-gx2"/>
                             <constraint firstItem="j3P-aP-fL2" firstAttribute="trailing" secondItem="YGf-nK-oM9" secondAttribute="trailing" type="default" id="Ray-SX-FPb"/>
+                            <constraint firstAttribute="bottom" secondItem="j3P-aP-fL2" secondAttribute="bottom" constant="39" id="V07-E3-r2x"/>
                             <constraint firstItem="j3P-aP-fL2" firstAttribute="leading" secondItem="YGf-nK-oM9" secondAttribute="leading" type="default" id="XHH-zU-kle"/>
-                            <constraint firstItem="j3P-aP-fL2" firstAttribute="top" secondItem="YGf-nK-oM9" secondAttribute="top" type="default" id="juy-2e-JPv"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="jFO-an-Ge8" appends="YES" id="MyL-NN-Qwh"/>
@@ -33,6 +42,7 @@
                     <connections>
                         <outlet property="parentView" destination="YGf-nK-oM9" id="Iiq-p6-Oy2"/>
                         <outlet property="scrollView" destination="j3P-aP-fL2" id="4eY-Zd-2H1"/>
+                        <outlet property="segmentedControl" destination="P0F-Lb-oSE" id="dpt-lY-zS4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -62,6 +72,7 @@
                 <relationship kind="action" name="processTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="parentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
     </classes>
