@@ -27,6 +27,7 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="jFO-an-Ge8" appends="YES" id="MyL-NN-Qwh"/>
+                            <outletCollection property="gestureRecognizers" destination="rtz-Li-pqU" appends="YES" id="1hr-9D-kLw"/>
                         </connections>
                     </view>
                     <connections>
@@ -41,6 +42,12 @@
                         <outlet property="delegate" destination="2" id="xM9-Tp-lpF"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="rtz-Li-pqU">
+                    <connections>
+                        <action selector="processLongPress:" destination="2" id="6OP-9p-JuN"/>
+                        <outlet property="delegate" destination="2" id="JLs-NJ-y6g"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
         </scene>
     </scenes>
@@ -51,6 +58,7 @@
         <class className="SenecaViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SenecaViewController.h"/>
             <relationships>
+                <relationship kind="action" name="processLongPress:" candidateClass="UILongPressGestureRecognizer"/>
                 <relationship kind="action" name="processTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="parentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>

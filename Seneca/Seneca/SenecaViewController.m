@@ -11,10 +11,11 @@
 #import <QuartzCore/CAShapeLayer.h>
 
 @interface SenecaViewController()
-@property (nonatomic, strong) IBOutlet UIView *parentView;
 
+@property (nonatomic, strong) IBOutlet UIView *parentView;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) CAShapeLayer *routesLayer;
+@property (nonatomic, strong) NSMutableArray *points;
 
 - (void)centerScrollViewContents;
 
@@ -24,13 +25,17 @@
 
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
+@synthesize points = _points;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    _points = [[NSMutableArray alloc] init];
+
     // 1
     UIImage *image = [UIImage imageNamed:@"gunsight-topo.png"];
+    // It's 2448 x 3264 ... 
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size=image.size};
     [self.scrollView addSubview:self.imageView];
@@ -65,10 +70,7 @@
     [super viewWillAppear:animated];
     
     // 4
-    CGRect scrollViewFrame = self.scrollView.frame;
     CGRect parentFrame = self.parentView.frame;
-    CGSize scrollContentSize = self.scrollView.contentSize;
-    CGSize imageContentSize = self.imageView.image.size;
     
     CGFloat scaleWidth = parentFrame.size.width / self.scrollView.contentSize.width;
     CGFloat scaleHeight = parentFrame.size.height / self.scrollView.contentSize.height;
@@ -87,15 +89,19 @@
     [self centerScrollViewContents];
 }
 
+- (IBAction)processLongPress:(UILongPressGestureRecognizer *)recognizer
+{
+    _points = [[NSMutableArray alloc] init];
+}
+
 - (IBAction)processTap:(UITapGestureRecognizer *)gestureRecognizer
 {
     CGPoint point = [gestureRecognizer locationInView:self.imageView];
-    CGPoint scrollPoint = [gestureRecognizer locationInView:self.scrollView];
-    CGPoint parentPoint = [gestureRecognizer locationInView:self.parentView];
     
+    [self.points addObject:[NSValue valueWithCGPoint:point]];
+    NSLog(@"%f, %f", point.x, point.y);
+
     CAShapeLayer *layer = self.routesLayer;
-    [layer setBounds:self.imageView.bounds];
-    [layer setPosition:self.imageView.center];
     [layer setFillColor:[[UIColor clearColor] CGColor]];
     [layer setStrokeColor:[[UIColor blueColor] CGColor]];
     [layer setLineWidth: 3.0f];
@@ -104,11 +110,19 @@
      [NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:5],nil]];
     
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, point.x, point.y);
-    CGPathAddLineToPoint(path, NULL, point.x+100, point.y+100);
     
+    CGPoint curPoint = [[self.points objectAtIndex:0] CGPointValue];
+    CGPathMoveToPoint(path, NULL, curPoint.x, curPoint.y);
+    for (int i=1; i<[self.points count]; i++)
+    {
+        curPoint = [[self.points objectAtIndex:i] CGPointValue];
+        CGPathAddLineToPoint(path, NULL, curPoint.x, curPoint.y);
+    }
+
     [layer setPath:path];
     CGPathRelease(path);
+    
+    [_points writeToFile:@"saved-points.txt" atomically:YES];
 }
 
 - (void)centerScrollViewContents {
