@@ -104,7 +104,7 @@
     CAShapeLayer *layer = self.routesLayer;
     [layer setFillColor:[[UIColor clearColor] CGColor]];
     [layer setStrokeColor:[[UIColor blueColor] CGColor]];
-    [layer setLineWidth: 3.0f];
+    [layer setLineWidth: 6.0f];
     [layer setLineJoin:kCALineJoinRound];
     [layer setLineDashPattern:
      [NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:5],nil]];
