@@ -12,6 +12,10 @@
 #import "SenecaCreateTapHandler.h"
 #import <QuartzCore/CALayer.h>
 #import <QuartzCore/CAShapeLayer.h>
+#import <CoreData/CoreData.h>
+
+#import "DrawPoint.h"
+#import "PitchOnTopo.h"
 
 @interface SenecaViewController()
 
@@ -28,6 +32,7 @@
 
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
+@synthesize managedObjectContext = _managedObjectContext;
 
 id<SenecaTapHandler> tapHandler;
 SenecaExploreTapHandler *exploreTapHandler;
@@ -78,6 +83,21 @@ SenecaCreateTapHandler *createTapHandler;
                          action:@selector(toggleMode:)
                forControlEvents:UIControlEventValueChanged];
     tapHandler = [[SenecaCreateTapHandler alloc] init];
+}
+
+- (void)drawRoutesOnLayer: (CAShapeLayer* ) layer
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Topo"];
+
+    NSError *error;
+	NSArray *fetchResults = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (fetchResults == nil) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+	}
+
 }
 
 - (void)didReceiveMemoryWarning

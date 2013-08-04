@@ -10,6 +10,13 @@
 		BE3F4D9917AC103600BC6371 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3F4D9817AC103600BC6371 /* QuartzCore.framework */; };
 		BE3F4E0517AD7B5800BC6371 /* SenecaExploreTapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */; };
 		BE3F4E0817AD7B9000BC6371 /* SenecaCreateTapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */; };
+		BE3F4E0A17AD863800BC6371 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3F4E0917AD863800BC6371 /* CoreData.framework */; };
+		BE3F4E0D17AD866000BC6371 /* Seneca.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E0B17AD866000BC6371 /* Seneca.xcdatamodeld */; };
+		BE3F4E2017ADEA1600BC6371 /* DrawPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E1F17ADEA1600BC6371 /* DrawPoint.m */; };
+		BE3F4E2317ADEA1700BC6371 /* Pitch.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E2217ADEA1700BC6371 /* Pitch.m */; };
+		BE3F4E2617ADEA1700BC6371 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E2517ADEA1700BC6371 /* Route.m */; };
+		BE3F4E2917ADEA1700BC6371 /* Topo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E2817ADEA1700BC6371 /* Topo.m */; };
+		BE3F4E2C17ADEA1700BC6371 /* PitchOnTopo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F4E2B17ADEA1700BC6371 /* PitchOnTopo.m */; };
 		BEC8228817A2BBC20027D29E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228717A2BBC20027D29E /* UIKit.framework */; };
 		BEC8228A17A2BBC20027D29E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228917A2BBC20027D29E /* Foundation.framework */; };
 		BEC8228C17A2BBC20027D29E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8228B17A2BBC20027D29E /* CoreGraphics.framework */; };
@@ -31,6 +38,18 @@
 		BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaExploreTapHandler.m; sourceTree = "<group>"; };
 		BE3F4E0617AD7B9000BC6371 /* SenecaCreateTapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenecaCreateTapHandler.h; sourceTree = "<group>"; };
 		BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenecaCreateTapHandler.m; sourceTree = "<group>"; };
+		BE3F4E0917AD863800BC6371 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BE3F4E0C17AD866000BC6371 /* Seneca.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seneca.xcdatamodel; sourceTree = "<group>"; };
+		BE3F4E1E17ADEA1600BC6371 /* DrawPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPoint.h; sourceTree = "<group>"; };
+		BE3F4E1F17ADEA1600BC6371 /* DrawPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPoint.m; sourceTree = "<group>"; };
+		BE3F4E2117ADEA1700BC6371 /* Pitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pitch.h; sourceTree = "<group>"; };
+		BE3F4E2217ADEA1700BC6371 /* Pitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pitch.m; sourceTree = "<group>"; };
+		BE3F4E2417ADEA1700BC6371 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		BE3F4E2517ADEA1700BC6371 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		BE3F4E2717ADEA1700BC6371 /* Topo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topo.h; sourceTree = "<group>"; };
+		BE3F4E2817ADEA1700BC6371 /* Topo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topo.m; sourceTree = "<group>"; };
+		BE3F4E2A17ADEA1700BC6371 /* PitchOnTopo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchOnTopo.h; sourceTree = "<group>"; };
+		BE3F4E2B17ADEA1700BC6371 /* PitchOnTopo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PitchOnTopo.m; sourceTree = "<group>"; };
 		BEC8228417A2BBC20027D29E /* Seneca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seneca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8228717A2BBC20027D29E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEC8228917A2BBC20027D29E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3F4E0A17AD863800BC6371 /* CoreData.framework in Frameworks */,
 				BE3F4D9917AC103600BC6371 /* QuartzCore.framework in Frameworks */,
 				BEC8228817A2BBC20027D29E /* UIKit.framework in Frameworks */,
 				BEC8228A17A2BBC20027D29E /* Foundation.framework in Frameworks */,
@@ -65,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE3F4E1D17ADE9A800BC6371 /* Model Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE3F4E2A17ADEA1700BC6371 /* PitchOnTopo.h */,
+				BE3F4E2B17ADEA1700BC6371 /* PitchOnTopo.m */,
+				BE3F4E2717ADEA1700BC6371 /* Topo.h */,
+				BE3F4E2817ADEA1700BC6371 /* Topo.m */,
+				BE3F4E2417ADEA1700BC6371 /* Route.h */,
+				BE3F4E2517ADEA1700BC6371 /* Route.m */,
+				BE3F4E2117ADEA1700BC6371 /* Pitch.h */,
+				BE3F4E2217ADEA1700BC6371 /* Pitch.m */,
+				BE3F4E1E17ADEA1600BC6371 /* DrawPoint.h */,
+				BE3F4E1F17ADEA1600BC6371 /* DrawPoint.m */,
+			);
+			name = "Model Files";
+			sourceTree = "<group>";
+		};
 		BEC8227B17A2BBC20027D29E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +122,7 @@
 		BEC8228617A2BBC20027D29E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3F4E0917AD863800BC6371 /* CoreData.framework */,
 				BE3F4D9817AC103600BC6371 /* QuartzCore.framework */,
 				BEC8228717A2BBC20027D29E /* UIKit.framework */,
 				BEC8228917A2BBC20027D29E /* Foundation.framework */,
@@ -106,6 +144,8 @@
 				BE3F4E0417AD7B5800BC6371 /* SenecaExploreTapHandler.m */,
 				BE3F4E0617AD7B9000BC6371 /* SenecaCreateTapHandler.h */,
 				BE3F4E0717AD7B9000BC6371 /* SenecaCreateTapHandler.m */,
+				BE3F4E0B17AD866000BC6371 /* Seneca.xcdatamodeld */,
+				BE3F4E1D17ADE9A800BC6371 /* Model Files */,
 				BEC8228E17A2BBC20027D29E /* Supporting Files */,
 			);
 			path = Seneca;
@@ -199,6 +239,12 @@
 				BEC822A417A2BBC20027D29E /* SenecaViewController.m in Sources */,
 				BE3F4E0517AD7B5800BC6371 /* SenecaExploreTapHandler.m in Sources */,
 				BE3F4E0817AD7B9000BC6371 /* SenecaCreateTapHandler.m in Sources */,
+				BE3F4E0D17AD866000BC6371 /* Seneca.xcdatamodeld in Sources */,
+				BE3F4E2017ADEA1600BC6371 /* DrawPoint.m in Sources */,
+				BE3F4E2317ADEA1700BC6371 /* Pitch.m in Sources */,
+				BE3F4E2617ADEA1700BC6371 /* Route.m in Sources */,
+				BE3F4E2917ADEA1700BC6371 /* Topo.m in Sources */,
+				BE3F4E2C17ADEA1700BC6371 /* PitchOnTopo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE3F4E0B17AD866000BC6371 /* Seneca.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE3F4E0C17AD866000BC6371 /* Seneca.xcdatamodel */,
+			);
+			currentVersion = BE3F4E0C17AD866000BC6371 /* Seneca.xcdatamodel */;
+			path = Seneca.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BEC8227C17A2BBC20027D29E /* Project object */;
 }

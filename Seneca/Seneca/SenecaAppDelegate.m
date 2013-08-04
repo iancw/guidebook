@@ -7,12 +7,21 @@
 //
 
 #import "SenecaAppDelegate.h"
+#import "SenecaViewController.h"
 
 @implementation SenecaAppDelegate
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    SenecaViewController *controller = (SenecaViewController *)navigationController.topViewController;
+    controller.managedObjectContext = self.managedObjectContext;
+
     return YES;
 }
 							

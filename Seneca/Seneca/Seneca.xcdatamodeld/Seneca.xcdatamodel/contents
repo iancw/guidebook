@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DrawPoint" representedClassName="Point" syncable="YES">
+        <attribute name="sequenceNo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="pitchOnTopo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PitchOnTopo" inverseName="points" inverseEntity="PitchOnTopo" syncable="YES"/>
+    </entity>
+    <entity name="Pitch" representedClassName="Pitch" syncable="YES">
+        <attribute name="pitchNo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="onRoute" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Route" inverseName="pitches" inverseEntity="Route" syncable="YES"/>
+        <relationship name="onTopo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PitchOnTopo" inverseName="pitch" inverseEntity="PitchOnTopo" syncable="YES"/>
+    </entity>
+    <entity name="PitchOnTopo" representedClassName="PitchOnTopo" syncable="YES">
+        <relationship name="pitch" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pitch" inverseName="onTopo" inverseEntity="Pitch" syncable="YES"/>
+        <relationship name="points" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DrawPoint" inverseName="pitchOnTopo" inverseEntity="DrawPoint" syncable="YES"/>
+        <relationship name="topo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Topo" inverseName="pitches" inverseEntity="Topo" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName="Route" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeNo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="pitches" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Pitch" inverseName="onRoute" inverseEntity="Pitch" syncable="YES"/>
+    </entity>
+    <entity name="Topo" representedClassName="Topo" syncable="YES">
+        <attribute name="imageFile" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pitches" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PitchOnTopo" inverseName="topo" inverseEntity="PitchOnTopo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Topo" positionX="187" positionY="159" width="128" height="73"/>
+        <element name="Pitch" positionX="171" positionY="-135" width="128" height="88"/>
+        <element name="Route" positionX="-29" positionY="-270" width="128" height="88"/>
+        <element name="DrawPoint" positionX="223" positionY="-0" width="128" height="103"/>
+        <element name="PitchOnTopo" positionX="-72" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>

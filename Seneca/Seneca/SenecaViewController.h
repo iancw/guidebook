@@ -13,4 +13,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
 @end

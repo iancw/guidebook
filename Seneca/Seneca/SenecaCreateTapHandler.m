@@ -7,26 +7,46 @@
 //
 
 #import "SenecaCreateTapHandler.h"
+#import "PitchOnTopo.h"
 
 @implementation SenecaCreateTapHandler
 
 NSMutableArray * _points;
 CAShapeLayer *_layer;
 
--(id) initWithLayer: (CAShapeLayer*) layer
+-(id) initWithLayer: (CAShapeLayer*) layer AndObjectManagerContext: (NSManagedObjectContext*) context;
 {
     self = [super init];
     if (self)
     {
         _points = [[NSMutableArray alloc] init];
         _layer = layer;
+        _managedObjectContext = context;
     }
     return self;
 }
 
 - (void) handleLongPress:(CGPoint) point
 {
-    
+    for (int i=0; i<[_points count]; i++)
+    {
+        CGPoint curPoint = [[_points objectAtIndex:i] CGPointValue];
+        /*
+         Create a new instance of the Event entity.
+         */
+        PitchOnTopo *pitch = (PitchOnTopo *)[NSEntityDescription insertNewObjectForEntityForName:@"PitchOnTopo" inManagedObjectContext:self.managedObjectContext];
+        
+        // Configure the new event with information from the location.
+        //pitch.topo = curTopo;
+        
+        /*
+        event.creationDate = location.timestamp;
+        CLLocationCoordinate2D coordinate = location.coordinate;
+        event.latitude = @(coordinate.latitude);
+        event.longitude = @(coordinate.longitude);
+        */
+
+    }
 }
 
 - (void) handleTap:(CGPoint) point

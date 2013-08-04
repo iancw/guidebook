@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "SenecaTapHandler.h"
 #import <QuartzCore/CAShapeLayer.h>
+#import <CoreData/CoreData.h>
 
 @interface SenecaCreateTapHandler : NSObject <SenecaTapHandler>
--(id) initWithLayer: (CAShapeLayer*) layer;
+
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+
+-(id) initWithLayer: (CAShapeLayer*) layer AndObjectManagerContext: (NSManagedObjectContext*) context;
+
 @end
