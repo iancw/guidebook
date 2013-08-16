@@ -14,6 +14,8 @@
 NSMutableArray * _points;
 CAShapeLayer *_layer;
 
+@synthesize managedObjectContext = _managedObjectContext;
+
 -(id) initWithLayer: (CAShapeLayer*) layer AndObjectManagerContext: (NSManagedObjectContext*) context;
 {
     self = [super init];
@@ -21,7 +23,7 @@ CAShapeLayer *_layer;
     {
         _points = [[NSMutableArray alloc] init];
         _layer = layer;
-        _managedObjectContext = context;
+        self.managedObjectContext = context;
     }
     return self;
 }

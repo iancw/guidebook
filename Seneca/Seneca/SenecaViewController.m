@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Ian Will. All rights reserved.
 //
 
+#import "SenecaAppDelegate.h"
 #import "SenecaViewController.h"
 #import "SenecaTapHandler.h"
 #import "SenecaExploreTapHandler.h"
@@ -61,6 +62,9 @@ SenecaCreateTapHandler *createTapHandler;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SenecaAppDelegate *appDelegate = (SenecaAppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext= appDelegate.managedObjectContext;
     
     _points = [[NSMutableArray alloc] init];
 
