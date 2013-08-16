@@ -17,10 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    SenecaViewController *controller = (SenecaViewController *)navigationController.topViewController;
+    SenecaViewController *controller = [[SenecaViewController alloc] init];
+
+    NSManagedObjectContext *context = [self managedObjectContext];
+    if (!context) {
+        // Handle the error.
+    }
+
     controller.managedObjectContext = self.managedObjectContext;
+
+//    UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:controller];
 
     return YES;
 }
