@@ -8,7 +8,7 @@
 
 #import "PitchOnTopo.h"
 #import "Pitch.h"
-#import "Point.h"
+#import "DrawPoint.h"
 #import "Topo.h"
 
 

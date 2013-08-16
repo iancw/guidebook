@@ -52,7 +52,7 @@ SenecaCreateTapHandler *createTapHandler;
     }else{
         if (! createTapHandler)
         {
-            createTapHandler = [[SenecaCreateTapHandler alloc] initWithLayer: self.routesLayer];
+            createTapHandler = [[SenecaCreateTapHandler alloc] initWithLayer: self.routesLayer AndObjectManagerContext:self.managedObjectContext];
         }
         tapHandler = createTapHandler;
     }
