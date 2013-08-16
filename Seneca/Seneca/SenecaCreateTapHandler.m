@@ -30,7 +30,7 @@ CAShapeLayer *_layer;
 {
     for (int i=0; i<[_points count]; i++)
     {
-        CGPoint curPoint = [[_points objectAtIndex:i] CGPointValue];
+        //CGPoint curPoint = [[_points objectAtIndex:i] CGPointValue];
         /*
          Create a new instance of the Event entity.
          */
