@@ -1,20 +1,20 @@
 //
-//  Point.m
+//  DrawPoint.m
 //  Seneca
 //
-//  Created by Ian & Adrienne Will on 8/3/13.
+//  Created by Ian Will on 9/4/13.
 //  Copyright (c) 2013 Ian Will. All rights reserved.
 //
 
 #import "DrawPoint.h"
-#import "PitchOnTopo.h"
+#import "Pitch.h"
 
 
 @implementation DrawPoint
 
-@dynamic sequenceNo;
 @dynamic x;
 @dynamic y;
-@dynamic pitchOnTopo;
+@dynamic seqNo;
+@dynamic parentPitch;
 
 @end

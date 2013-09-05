@@ -7,7 +7,8 @@
 //
 
 #import "SenecaCreateTapHandler.h"
-#import "PitchOnTopo.h"
+#import "DrawPoint.h"
+#import "Pitch.h"
 
 @implementation SenecaCreateTapHandler
 
@@ -30,13 +31,18 @@ CAShapeLayer *_layer;
 
 - (void) handleLongPress:(CGPoint) point
 {
+    /*
+     Create a new instance of the Event entity.
+     */
+    Pitch *pitch = (Pitch *)[NSEntityDescription insertNewObjectForEntityForName:@"Pitch" inManagedObjectContext:self.managedObjectContext];
     for (int i=0; i<[_points count]; i++)
     {
-        //CGPoint curPoint = [[_points objectAtIndex:i] CGPointValue];
-        /*
-         Create a new instance of the Event entity.
-         */
-        PitchOnTopo *pitch = (PitchOnTopo *)[NSEntityDescription insertNewObjectForEntityForName:@"PitchOnTopo" inManagedObjectContext:self.managedObjectContext];
+        CGPoint curPoint = [[_points objectAtIndex:i] CGPointValue];
+        DrawPoint *dp = (DrawPoint *)[NSEntityDescription insertNewObjectForEntityForName:@"DrawPoint" inManagedObjectContext:self.managedObjectContext];
+        dp.x = [NSNumber numberWithFloat:curPoint.x];
+        dp.y = [NSNumber numberWithFloat:curPoint.y];
+        dp.seqNo = [NSNumber numberWithInt:i];
+        dp.parentPitch = pitch;
         
         // Configure the new event with information from the location.
         //pitch.topo = curTopo;
@@ -47,8 +53,13 @@ CAShapeLayer *_layer;
         event.latitude = @(coordinate.latitude);
         event.longitude = @(coordinate.longitude);
         */
-
     }
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Handle the error.
+        NSLog(@"Error saving");
+    }
+    [_points removeAllObjects];
 }
 
 - (void) handleTap:(CGPoint) point

@@ -2,19 +2,17 @@
 //  Pitch.m
 //  Seneca
 //
-//  Created by Ian & Adrienne Will on 8/3/13.
+//  Created by Ian Will on 9/4/13.
 //  Copyright (c) 2013 Ian Will. All rights reserved.
 //
 
 #import "Pitch.h"
-#import "PitchOnTopo.h"
-#import "Route.h"
+#import "DrawPoint.h"
 
 
 @implementation Pitch
 
 @dynamic pitchNo;
-@dynamic onTopo;
-@dynamic onRoute;
+@dynamic pointOnPitch;
 
 @end

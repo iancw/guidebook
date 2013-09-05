@@ -16,7 +16,7 @@
 #import <CoreData/CoreData.h>
 
 #import "DrawPoint.h"
-#import "PitchOnTopo.h"
+#import "Pitch.h"
 
 @interface SenecaViewController()
 
@@ -50,6 +50,7 @@ SenecaCreateTapHandler *createTapHandler;
             exploreTapHandler = [[SenecaExploreTapHandler alloc] init];
         }
         tapHandler = exploreTapHandler;
+        [self drawRoutesOnLayer:self.routesLayer];
     }else{
         if (! createTapHandler)
         {
@@ -57,6 +58,11 @@ SenecaCreateTapHandler *createTapHandler;
         }
         tapHandler = createTapHandler;
     }
+}
+
+- (void)addRoutesFromCoreData
+{
+    
 }
 
 - (void)viewDidLoad
@@ -83,6 +89,8 @@ SenecaCreateTapHandler *createTapHandler;
     self.routesLayer = [CAShapeLayer layer];
     [self.imageView.layer addSublayer: self.routesLayer];
     
+    [self drawRoutesOnLayer: self.routesLayer];
+    
     [self.segmentedControl addTarget:self
                          action:@selector(toggleMode:)
                forControlEvents:UIControlEventValueChanged];
@@ -91,8 +99,11 @@ SenecaCreateTapHandler *createTapHandler;
 
 - (void)drawRoutesOnLayer: (CAShapeLayer* ) layer
 {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Topo"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Pitch"];
 
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Pitch" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
     NSError *error;
 	NSArray *fetchResults = [self.managedObjectContext executeFetchRequest:request error:&error];
 	if (fetchResults == nil) {
@@ -101,7 +112,35 @@ SenecaCreateTapHandler *createTapHandler;
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
 	}
+    NSSortDescriptor * descriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"seqNo" ascending:YES];
+    [layer setFillColor:[[UIColor clearColor] CGColor]];
+    [layer setStrokeColor:[[UIColor redColor] CGColor]];
+    [layer setLineWidth: 6.0f];
+    [layer setLineJoin:kCALineJoinRound];
+    [layer setLineDashPattern:
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:5],nil]];
 
+    CGMutablePathRef path = CGPathCreateMutable();
+    for (id object in fetchResults)
+    {
+        Pitch * pitch = (Pitch*)object;
+        NSSet *points = [pitch pointOnPitch];
+        NSArray* sortedPoints = [points sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+        Boolean first = TRUE;
+        for (id dp_id in sortedPoints){
+            DrawPoint *dp = (DrawPoint*)dp_id;
+            CGPoint curPoint = CGPointMake(dp.x.floatValue, dp.y.floatValue);
+            if (first){
+                CGPathMoveToPoint(path, NULL, curPoint.x, curPoint.y);
+                first = FALSE;
+            }else{
+                CGPathAddLineToPoint(path, NULL, curPoint.x, curPoint.y);
+            }
+        }
+    }
+    [layer setPath:path];
+    CGPathRelease(path);
 }
 
 - (void)didReceiveMemoryWarning
